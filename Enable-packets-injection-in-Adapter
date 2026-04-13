@@ -1,0 +1,17 @@
+sudo apt-get update
+sudo apt install bc
+git clone https://github.com/aircrack-ng/rtl8188eus
+sudo rmmod r8188eu.ko
+cd rtl8188eus/
+sudo -i
+sudo echo "blacklist r8188eu.ko" > "/etc/modprobe.d/realtek.conf"
+exit
+sudo make
+sudo make install
+sudo modprobe 8188eu
+cd ..
+sudo iwconfig
+sudo ifconfig wlan1 down
+sudo iwconfig wlan1 mode monitor
+sudo ifconfig wlan1 up
+sudo iwconfig
