@@ -1,0 +1,33 @@
+########################### SHELL-SCRIPT FOR COMMON INDIAN NAME COMBINATIONS ##########################
+
+#!/bin/bash
+
+k=0
+names=`cat 4.\ Middle.txt`
+for i in ${names}
+do
+  k=${#i}
+  k=$((k+4))
+  crunch $k $k + + + @ -t ${i,}^%%% >> middle@DDD.txt
+done
+
+########################## SHELL SCRIPT FOR COMMON INDIAN NAME COMBINATIONS #############################
+
+#!/bin/bash
+
+k=0
+names=`cat 4.\ Middle.txt`
+for i in ${names}
+do
+  k=${#i}
+  k=$((k+4))
+  crunch $k $k + + + @ -t ${i^}^%%% >> Middle@DDD.txt
+done
+
+############################## CRUNCH GENERATED WORDLIST FOR DD-MM-YY PATTERN DATES ####################################
+
+crunch 8 8 -t %%-%%-%% -l aa-aa-aa >> /media/user/PARROT/Documents/wordlists/SlashDates.txt
+
+############################## CRUNCH GENERATED WORDLIST FOR DD/MM/YY PATTERN DATES ####################################
+
+crunch 8 8 -t %%/%%/%% -l aa/aa/aa >> /media/user/PARROT/Documents/wordlists/SlashDates.txt
